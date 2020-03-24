@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+    <!--<base target="_blank">-->
+    <meta charset="UTF-8">
+    <title>BOLALA</title>
+    <link href="img/icon.ico" rel="icon" type="image">
+    <link rel="stylesheet" href="scss/bootstrap.css">
+    <link rel="stylesheet" href="scss/bll-reset.css">
+    <link rel="stylesheet" href="scss/bll-grid.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="header container-fluid">
+
+</div>
+<div class="more-main container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">首页</a></li>
+            <li class="breadcrumb-item active">搜索页</li>
+        </ol>
+    </nav>
+    <div class="row book-list"></div>
+
+</div>
+<div class="footer"></div>
+<script src="js/jquery-1.7.1.js"></script>
+<script>
+    $(".header").load("data/header.html");
+    var searchkey = decodeURI(location.search.substring(1).split("=")[1]);
+    console.log(searchkey);
+    $(".page").hide();
+    $.get('data/handle-more.php', {searchkey: searchkey}, function (data) {
+        console.log(data);
+        data = JSON.parse(data);
+        for (var i = 0; i < data.length; i++) {
+            var dom = "<div class='col-12 col-md-10 mx-auto item '><div class='left'>" +
+                "<img src='../../../" + data[i].image + "'>" +
+                "<a data-id='" + data[i].id + "' href='detail.html?id=" + data[i].id + "'>" + data[i].book + "</a></div></div>";
+            $(".more-main .book-list").append($(dom));
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-6  nav-left mr-auto">
+            <img src="img/book.png" alt="">
+            <ul>
+                <li><a href="insert.html">添加图书</a></li>
+                <li><a href="more.html">管理图书</a></li>
+                <li><a href="index.html">回到主页</a></li>
+            </ul>
+        </div>
+        <div class="col-5 d-none d-lg-flex nav-right">
+            <input type="text" placeholder="搜索词" class="search-key">
+            <button class="btn btn-book to-search">搜索</button>
+            <div class="search-tips">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //    搜索提示  这个部分有BUG
+    $searchtips = $(".search-tips");//提示列表
+    $searchkey = $(".search-key");//关键词
+    $searchtips.hide();
+    //    点文档隐藏
+    $(document).click(function () {
+        $(".search-tips ul").empty();
+        $searchtips.hide();
+    });
+    //  延迟执行
+    var timer;
+    $searchkey.keyup(function (e) {
+        $(".search-tips ul").empty();
+        clearTimeout(timer);
+        timer=setTimeout(function () {
+            updatesearch($searchkey.val());
+        },1000);
+        $searchtips.show();
+    });
+    //更新搜索列表
+    function updatesearch(key) {
+        var dom="";
+        $.get("data/handle-search.php",{key:key},function (data) {
+            data=JSON.parse(data);
+            for (var i=0;i<data.length;i++){
+                dom+="<li>"+data[i].book+"</li>"
+            }
+            $(".search-tips ul").append(dom);
+            console.log("查询成功一次");
+        })
+    }
+    //    点击选词
+    $searchtips.on("click","ul li",function () {
+        console.log("点击一次");
+        $searchkey.val($(this).text());
+        $searchtips.hide();
+    });
+    //请求搜索
+    $(".to-search").click(function () {
+        window.location="search.html?searchkey="+ $searchkey.val();
+    })
+</script>

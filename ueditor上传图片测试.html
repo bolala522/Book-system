@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+    <base target="_blank">
+    <meta charset="UTF-8">
+    <title>BOLALA</title>
+    <link href="img/icon.ico" rel="icon" type="image">
+    <link rel="stylesheet" href="scss/bootstrap.css">
+    <link rel="stylesheet" href="scss/bll-reset.css">
+    <link rel="stylesheet" href="scss/bll-grid.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<div class="header container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-6  nav-left mr-auto">
+                <img src="img/book.png" alt="">
+                <ul>
+                    <li><a href="">添加图书</a></li>
+                    <li><a href="">管理图书</a></li>
+                    <li><a href="">回到主页</a></li>
+                </ul>
+            </div>
+            <div class="col-5 d-none d-lg-flex nav-right">
+                <input type="text" placeholder="搜索词">
+                <button class="btn btn-book">搜索</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main container">
+    <div class="row">
+        <div class="col-8 mx-auto">
+            <script type="text/plain" id="editorupload"></script>
+             <input type="text" id="picture" name="thumbnail" style="width:400px"/>
+            <input type=button value="上传图片" onClick="upImage();">
+        </div>
+    </div>
+</div>
+<div class="footer"></div>
+<script src="js/jquery-1.7.1.js"></script>
+<!--配置文件-->
+<script type="text/javascript" src="UEditor/ueditor.config.js"></script>
+<!--编辑器文件-->
+<script type="text/javascript" src="UEditor/ueditor.all.js"></script>
+<!--实例化编辑器-->
+<script>
+    //实例化编辑器
+    var ueditorupload = UE.getEditor('editorupload',
+        {
+            autoHeightEnabled: false
+        });
+    ueditorupload.ready(function () {
+
+        ueditorupload.hide();//隐藏编辑器
+
+//监听图片上传
+        ueditorupload.addListener('beforeInsertImage', function (t, arg) {
+            $("#picture").attr("value", arg[0].src);
+// alert('图片地址'+arg[0].src);
+        });
+
+        ueditorupload.addListener('afterUpfile', function (t, arg) {
+            $("#picture").attr("value", arg[0].src);
+            //alert('文件地址：'+arg[0].url);
+        });
+
+        /* 文件上传监听
+          * 需要在ueditor.all.min.js文件中找到
+          * d.execCommand("insertHtml",l)
+          * 之后插入d.fireEvent('afterUpfile',b)
+          */
+
+    });
+
+    //弹出图片上传的对话框
+    function upImage() {
+        var myImage = ueditorupload.getDialog("insertimage");
+        myImage.open();
+    }
+    //弹出文件上传的对话框
+    function upFiles() {
+        var myFiles = ueditorupload.getDialog("attachment");
+        myFiles.open();
+    }
+</script>
+
+</body>
+</html>

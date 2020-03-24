@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=no">
+    <!--<base target="_blank">-->
+    <meta charset="UTF-8">
+    <title>BOLALA</title>
+    <link href="img/icon.ico" rel="icon" type="image">
+    <link rel="stylesheet" href="scss/bootstrap.css">
+    <link rel="stylesheet" href="scss/bll-reset.css">
+    <link rel="stylesheet" href="scss/bll-grid.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="header container-fluid">
+
+</div>
+<div class="more-main container">
+    <div class="row book-list"></div>
+    <nav class="page">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link first" href="#">首页</a>
+            </li>
+            <li class="page-item"><a class="page-link pre" href="#">上一页</a></li>
+            <li class="page-item"><a class="page-link next" href="#">下一页</a></li>
+            <li class="page-item">
+                <a class="page-link last" href="#">尾页</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="footer"></div>
+<script src="js/jquery-1.7.1.js"></script>
+<script>
+    $(".header").load("data/header.html");
+    var key=location.search.substring(1).split("=")[1];
+    //更新列表
+    function updatelist(page) {
+        $(".more-main .book-list").empty();
+        page = (page - 1) * 6;
+        $.get('data/handle-more.php', {page: page}, function (data) {
+            data = JSON.parse(data);
+//            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                var dom = "<div class='col-12 col-md-10 mx-auto item '><div class='left'>" +
+                    "<img src='../../../" + data[i].image + "'>" +
+                    "<a data-id='" + data[i].id + "' href='detail.html?id=" + data[i].id + "'>" + data[i].book + "</a></div><div class='right'><a href='update.html?id="+data[i].id+"' class='btn btn-book'>修改</a>" +
+                    "<a class='btn btn-danger'>删除</a></div></div>";
+                $(".more-main .book-list").append($(dom));
+            }
+            //    从数据库删除
+            $(".right").on("click",".btn-danger",function (e) {
+                var that=this;
+                var id=$(this).closest('.item').find(".left a").data('id');
+                $.get("data/handle-delete.php",{id:id},function (data) {
+                    if (data==="succ"){
+                        $(that).closest('.item').remove();
+                    }
+                });
+            })
+        });
+    }
+    if(key){
+        console.log(key);
+        $(".page").hide();
+        $.get('data/handle-more.php', {key: key}, function (data) {
+            console.log(data);
+            data = JSON.parse(data);
+            for (var i = 0; i < data.length; i++) {
+                var dom = "<div class='col-12 col-md-10 mx-auto item '><div class='left'>" +
+                    "<img src='../../../" + data[i].image + "'>" +
+                    "<a data-id='" + data[i].id + "' href='detail.html?id=" + data[i].id + "'>" + data[i].book + "</a></div></div>";
+                $(".more-main .book-list").append($(dom));
+            }
+        });
+    }else {
+        var count=null,page=1,pageMax=null;
+        //总条数
+        $.ajax({
+            url: "data/handle-more.php",
+            async: false,    //同步方式
+            type: "GET",
+            success: function (data) {
+                data = JSON.parse(data);
+                count = data.length;
+                pageMax = Math.ceil(count / 6);
+                console.log(data);
+            }
+        });
+
+        //初始化
+        updatelist(1);
+        $(".pagination").on("click", ".page-link", function (e) {
+            if ($(this).hasClass("first")) {
+                updatelist(1);
+                page=1;
+            }
+            if ($(this).hasClass("last")) {
+                updatelist(pageMax);
+                page = pageMax;
+            }
+            if ($(this).hasClass("pre")) {
+                page > 1 ? page-- : 1;
+                updatelist(page);
+            }
+            if ($(this).hasClass("next")) {
+                page < pageMax ? page++ : pageMax ;
+                updatelist(page);
+            }
+        });
+    }
+</script>
+</body>
+</html>
