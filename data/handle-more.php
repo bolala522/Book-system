@@ -1,12 +1,6 @@
 <?php
-header("content-type:text/html;charset=utf-8");
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "jq-book");
-$sql = 'SET NAMES UTF8';
-$result = mysqli_query($conn, $sql);
+include("conn-local.php");
+
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
     $sql = "SELECT * FROM `book-info`ORDER BY id LIMIT $page ,6";

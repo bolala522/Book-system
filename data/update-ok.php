@@ -1,12 +1,6 @@
 <?php
-header("content-type:text/html;charset=utf-8");
-$conn=mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "jq-book");
-$sql='SET NAMES UTF8';
-$result=mysqli_query($conn, $sql);
+include("conn-local.php");
+
 $id=$_GET['id'];
 $sql="SELECT * FROM `book-info` WHERE `id` = '$id'";
 $result=mysqli_query($conn,$sql);

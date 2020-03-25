@@ -1,12 +1,5 @@
 <?php
-header("content-type:text/html;charset=utf-8");
-$conn=mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "jq-book");
-$sql='SET NAMES UTF8';
-$result=mysqli_query($conn, $sql);
+include("conn-local.php");
 
 $key=$_REQUEST['key'];
 //https://www.cnblogs.com/jpfss/p/6944245.html

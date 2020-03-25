@@ -46,7 +46,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57221204">
+    <splitter split-orientation="horizontal" split-proportion="0.62888485">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
@@ -59,21 +59,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ueditor.config.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/UEditor/ueditor.config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="18" column="68" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="68" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="update.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="update.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/update.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+                <state relative-caret-position="85">
+                  <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
                   <folding>
                     <element signature="e#3350#4003#0" expanded="false" />
                     <element signature="e#4047#4140#0" expanded="false" />
@@ -148,6 +138,16 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="ueditor.config.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/UEditor/ueditor.config.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="7891">
+                  <caret line="445" column="43" lean-forward="true" selection-start-line="445" selection-start-column="43" selection-end-line="445" selection-end-column="43" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="handle-update.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data/handle-update.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -174,7 +174,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="handle-delete.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="handle-delete.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data/handle-delete.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="510">
@@ -243,10 +243,10 @@
         <option value="$PROJECT_DIR$/more.html" />
         <option value="$PROJECT_DIR$/prop測試.html" />
         <option value="$PROJECT_DIR$/data/update-ok.php" />
-        <option value="$PROJECT_DIR$/update.html" />
         <option value="$PROJECT_DIR$/data/header.html" />
         <option value="$PROJECT_DIR$/data/handle-update.php" />
         <option value="$PROJECT_DIR$/data/useed.php" />
+        <option value="$PROJECT_DIR$/update.html" />
       </list>
     </option>
   </component>
@@ -301,49 +301,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Book system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Book system" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Book system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Book system" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Book system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Book system" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,7 +326,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -467,12 +425,12 @@
       <workItem from="1584925736721" duration="1717000" />
       <workItem from="1584951960105" duration="5467000" />
       <workItem from="1584957653887" duration="286000" />
-      <workItem from="1585044971895" duration="1799000" />
+      <workItem from="1585044971895" duration="3461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61005000" />
+    <option name="totallyTimeSpent" value="62667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -842,18 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="e#3350#4003#0" expanded="false" />
-            <element signature="e#4047#4140#0" expanded="false" />
-            <element signature="e#4181#4273#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/handle-update.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -899,18 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/handle-delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <marker date="1584880704052" expanded="true" signature="235:284" ph="DELETE FROM " />
-            <marker date="1584880704052" expanded="true" signature="235:285" ph="DELETE FROM " />
-            <marker date="1584880704052" expanded="true" signature="235:288" ph="SELECT * FRO... book-info" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
@@ -943,11 +877,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/handle-delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <marker date="1584880704052" expanded="true" signature="235:284" ph="DELETE FROM " />
+            <marker date="1584880704052" expanded="true" signature="235:285" ph="DELETE FROM " />
+            <marker date="1584880704052" expanded="true" signature="235:288" ph="SELECT * FRO... book-info" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UEditor/ueditor.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="68" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="68" />
+        <state relative-caret-position="7891">
+          <caret line="445" column="43" lean-forward="true" selection-start-line="445" selection-start-column="43" selection-end-line="445" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+          <folding>
+            <element signature="e#3350#4003#0" expanded="false" />
+            <element signature="e#4047#4140#0" expanded="false" />
+            <element signature="e#4181#4273#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
